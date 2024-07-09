@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Customer Info</title>
     <link rel="stylesheet" th:href="@{/styles.css}">
+    <style>
+        error {
+    color: red;
+}
+    </style>
 </head>
 <body>
 <div class="form-container">
@@ -12,12 +17,16 @@
         <input type="text" id="firstname" name="firstname" th:field="*{firstname}" required>
 
         <label for="lastname">Last Name:</label>
-        <input type="text" id="lastname" name="lastname" th:field="*{lastname}" >
-        <span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}" ></span>
+        <input type="text" id="lastname" name="lastname" th:field="*{lastname}">
+        <span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span>
 
         <label for="freepass">Free Pass Number:</label>
         <input type="number" id="freepass" name="freepass" th:field="*{freepass}">
-        <span th:if="${#fields.hasErrors('freepass')}" th:errors="*{freepass}" ></span>
+        <span th:if="${#fields.hasErrors('freepass')}" th:errors="*{freepass}"></span>
+
+        <label for="postalcode">Free Pass Number:</label>
+        <input type="text" id="postalcode" name="postalcode" th:field="*{postalcode}">
+        <span th:if="${#fields.hasErrors('postalcode')}" th:errors="*{postalcode}" class="error"></span>
 
         <button type="submit">Submit</button>
     </form>

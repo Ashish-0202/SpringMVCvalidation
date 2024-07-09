@@ -1,10 +1,7 @@
 package com.demoSpring.SpringMVCvalidations.Entity;
 
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +17,12 @@ public class Customer {
     @Size(min = 1,message = "Last name is required..!")
     private String lastname;
 
+    //If we wa
+    @NotNull(message = "Without Free passes you are not allowed...!")
     @Min(value = 0,message = "Freepasses cannot be less than 0..!")
     @Max(value = 10,message = "Freepasses Cannot be more than 10..!")
-    private int freepass;
+    private Integer freepass;
+
+    @Pattern(regexp = "[a-zA-Z0-9]{6}",message = "Postal code must be only 6 letters.!")
+    private String postalcode;
 }
