@@ -37,6 +37,7 @@ public class MainController {
     @PostMapping("/submitform")
     public String submitForm(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult){
         System.out.println("|"+customer.getLastname()+"|");
+        System.out.println("Binding Result: "+bindingResult.toString());
         if(bindingResult.hasErrors()){
             return "CustomerInfo";
         }else {

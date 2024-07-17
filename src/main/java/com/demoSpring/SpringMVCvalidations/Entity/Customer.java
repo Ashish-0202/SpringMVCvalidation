@@ -17,7 +17,7 @@ public class Customer {
     @Size(min = 1,message = "Last name is required..!")
     private String lastname;
 
-    //If we wa
+    //If we want to mark an int value to be not null then we need to use Wrapper classes
     @NotNull(message = "Without Free passes you are not allowed...!")
     @Min(value = 0,message = "Freepasses cannot be less than 0..!")
     @Max(value = 10,message = "Freepasses Cannot be more than 10..!")

@@ -21,10 +21,10 @@
         <span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span>
 
         <label for="freepass">Free Pass Number:</label>
-        <input type="number" id="freepass" name="freepass" th:field="*{freepass}">
+        <input type="text" id="freepass" name="freepass" th:field="*{freepass}">
         <span th:if="${#fields.hasErrors('freepass')}" th:errors="*{freepass}"></span>
 
-        <label for="postalcode">Free Pass Number:</label>
+        <label for="postalcode">Postal Code:</label>
         <input type="text" id="postalcode" name="postalcode" th:field="*{postalcode}">
         <span th:if="${#fields.hasErrors('postalcode')}" th:errors="*{postalcode}" class="error"></span>
 
